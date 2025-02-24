@@ -13,7 +13,7 @@ function App() {
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <div className={"container md:pb-2 pb-16"}>
             <Navigation/>
-            <div className={"md:overflow-hidden overflow-scroll"}>
+            <div className={"overflow-scroll"}>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about-me" element={<AboutMe/>}/>

@@ -86,7 +86,7 @@ const projects: TimelineItemTypeProject[] = [
 const Resume = () => {
 
     return (
-        <div className={"w-full"}>
+        <div className={"w-full h-fit"}>
             <h2 className='text-3xl font-bold text-primary mt-3 md:mt-10'>Experience</h2>
             <Timeline className='mt-4 md:mt-8 md:ml-6 ml-1'>
                 {experiences.map((item) => (

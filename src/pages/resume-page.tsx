@@ -8,7 +8,7 @@ import Resume from "@/components/resume.tsx";
 
 function ResumePage() {
     return (
-        <main>
+        <main className={"container"}>
             <Resume/>
         </main>
     )
