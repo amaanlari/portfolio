@@ -67,7 +67,7 @@
 }
 
 .container {
-  @apply px-4 mx-auto lg:px-8 xl:max-w-6xl;
+  @apply px-4 max-w-full mx-auto lg:px-8 xl:max-w-6xl;
 }
 
 .img-box {
@@ -98,7 +98,4 @@
 
 .headline-2 {
   @apply text-3xl font-semibold lg:text-4xl lg:leading-tight;
-}
-.section {
-    @apply pt-16 lg:pt-28;
 }

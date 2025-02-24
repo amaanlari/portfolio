@@ -1,63 +1,92 @@
-/**
- * @author Amaan Lari
- * @copyright 2025 amaanlari
- * @license Apache-2.0
- */
-import {JSX} from "react/jsx-runtime";
+import {Link, useLocation} from 'react-router-dom';
+import {Home, FileText, User, BookOpen} from 'lucide-react';
+import {ModeToggle} from '@/components/mode-toggle';
 import {SVGProps} from "react";
+import {JSX} from "react/jsx-runtime";
 
-const aboutItems: never[] = [
-    // {
-    //     label: "Projects Completed",
-    //     number: 2
-    // },
-    // {
-    //     label: "Years of Experience",
-    //     number: 1
-    // }
-]
+// interface NavigationProps {
+//     className?: string;
+// }
 
-const About = () => {
+const Navigation = () => {
+    const location = useLocation();
+
+    const navItems = [
+        {href: '/', label: 'Home', icon: <Home className="h-5 w-5"/>},
+        {href: '/about-me', label: 'About Me', icon: <User className="h-5 w-5"/>},
+        {href: '/resume', label: 'Resume', icon: <FileText className="h-6 w-5"/>},
+        {href: '/blog', label: 'Blog', icon: <BookOpen className="h-5 w-5"/>}
+    ];
+
+    const isActive = (path: string) => location.pathname === path;
+
+    const linkClass = (path: string) =>
+        `group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors
+    ${isActive(path)
+            ? "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-50"
+            : "hover:bg-gray-100 dark:hover:bg-gray-800"}
+    focus:bg-gray-100 focus:text-gray-900 dark:focus:bg-gray-800 dark:focus:text-gray-50`;
+
+    const mobileLinkClass = (path: string) =>
+        `flex flex-col flex-1 items-center justify-center gap-1 mx-2 text-sm transition-colors
+    ${isActive(path)
+            ? "text-gray-900 dark:text-gray-50"
+            : "text-gray-500 dark:text-gray-400"}`;
+
+    const mobileIconClass = (path: string) =>
+        `h-full w-8 flex justify-center items-center ${isActive(path) 
+            ? "bg-slate-300 dark:bg-slate-800 rounded-full text-gray-900 dark:text-gray-50 " 
+            : "text-gray-500"}`;
     return (
-        <section className={"py-6 md:pt-28"}>
-            <div className={"container"}>
-                <div className={"bg-slate-200/50 dark:bg-slate-800/50 p-7 items-center rounded-2xl md:p-12"}>
-                    <p className={"text-slate-800 dark:text-slate-300 mb-4 md:mb-8 md:text-xl"}>
-                        Welcome! I'm Amaan Lari, a passionate Full-Stack Developer with a knack for building scalable
-                        and high-performing applications.
+        <>
+            {/* Top Navigation for Medium+ Screens */}
+            <header className="hidden md:flex h-20 w-full shrink-0 items-center container">
+                <Link to="/" className="mr-6 hidden md:flex">
+                    <LogoIcon/>
+                    <span className="sr-only">Amaan Lari</span>
+                </Link>
+                <nav className="mx-auto hidden md:flex gap-6 border rounded-md">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.href}
+                            to={item.href}
+                            className={linkClass(item.href)}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                </nav>
+                <span className="hidden md:flex ml-12">
+                    <ModeToggle/>
+                </span>
+            </header>
 
-                        Combining innovation and technical expertise, I transform ideas into seamless digital
-                        experiences—whether it's crafting secure backend systems, designing intuitive front-end
-                        interfaces, or optimizing performance for maximum efficiency. With experience in Spring Boot,
-                        Node.js, React, and Angular, I bring a problem-solving mindset to every project.
+            {/* Bottom Navigation for Mobile */}
 
-                        Let's build something exceptional together!
-                    </p>
-                    <div className={"flex flex-wrap items-center gap-4 md:gap-7"}>
-                        {
-                            aboutItems.map(
-                                ({label, number}, key) => (
-                                    <div key={key}>
-                                        <div className={"flex items-center md:mb-2"}>
-                                            <span className={"text-2xl font-semibold md:text-4xl"}>{number}</span>
-                                            <span className={"text-slate-400 font-semibold md:text-3xl"}>+</span>
-                                        </div>
-
-                                        <p className={"text-sm text-slate-400"}>{label}</p>
-                                    </div>
-                                ))
-                        }
-                        <div className={"ml-auto"}>
-                        <LogoIcon className={"align-text-bottom"}/>
+            <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-slate-600 bg-background">
+                <div className="mx-auto px-4">
+                    <div className="flex items-stretch justify-between py-2">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.href}
+                                to={item.href}
+                                className={mobileLinkClass(item.href)}
+                            >
+                                <span className={mobileIconClass(item.href)}>{item.icon}</span>
+                                <button className="text-xs">{item.label}</button>
+                            </Link>
+                        ))}
+                        <div className="flex flex-col items-center justify-center gap-1 px-2 ">
+                            <ModeToggle/>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    )
-}
+            </nav>
+        </>
+    );
+};
 
-
+// Your existing LogoIcon component
 function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
     return (
         <svg
@@ -75,4 +104,4 @@ function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
     );
 }
 
-export default About;
+export default Navigation;

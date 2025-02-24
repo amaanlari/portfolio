@@ -86,12 +86,12 @@ const projects: TimelineItemTypeProject[] = [
 const Resume = () => {
 
     return (
-        <div className={"container"}>
-            <h2 className='text-3xl font-bold text-primary mt-10'>Experience</h2>
-            <Timeline className='mt-8 ml-6'>
+        <div className={"w-full"}>
+            <h2 className='text-3xl font-bold text-primary mt-3 md:mt-10'>Experience</h2>
+            <Timeline className='mt-4 md:mt-8 md:ml-6 ml-1'>
                 {experiences.map((item) => (
                     <TimelineItem key={item.id}>
-                        <TimelineHeader>
+                        <TimelineHeader variant={"ghost"}>
                             <TimelineTitle>{item.title}</TimelineTitle>
                             <TimelineSubTitle>{item.subTitle}</TimelineSubTitle>
                             <TimelineTime variant={"outline"}
@@ -111,15 +111,14 @@ const Resume = () => {
                     </TimelineItem>
                 ))}
             </Timeline>
-            <h2 className='text-3xl font-bold text-primary mt-10'>Projects</h2>
-            <Timeline className='mt-8 ml-6'>
+            <h2 className='text-3xl font-bold text-primary mt-4 md:mt-10'>Projects</h2>
+            <Timeline className='mt-3 md:mt-8 md:ml-6 ml-1 h-96'>
                 {projects.map((item) => (
-                    <TimelineItem key={item.id}>
+                    <TimelineItem key={item.id} className={""}>
                         <div className={"flex justify-between"}>
-                            <div className={"flex-col w-3/4 me-3"}>
-                                <TimelineHeader variant={"default"}>
+                            <div className={"flex-col md:w-3/4 md:me-3"}>
+                                <TimelineHeader variant={"ghost"} className={""}>
                                     <TimelineTitle>{item.title}</TimelineTitle>
-
                                 </TimelineHeader>
                                 {item.description && (
                                     <TimelineDescription>
@@ -131,7 +130,7 @@ const Resume = () => {
                                     </TimelineDescription>
                                 )}
                             </div>
-                            <figure className={"max-[425px]:hidden"}>
+                            <figure className={"hidden md:flex"}>
                                 <Link to={item.githubLink || "/"} target={"_blank"}>
                                     <img src={item.githubPreview} alt="Placeholder" width={300} height={200}
                                          className={"rounded-2xl"}/>

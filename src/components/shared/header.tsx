@@ -3,60 +3,38 @@
  * @copyright 2025 amaanlari
  * @license Apache-2.0
  */
-import {JSX} from "react/jsx-runtime";
-import {SVGProps} from "react";
+import { Link, useLocation } from "react-router-dom";
+import { SVGProps } from "react";
+import { JSX } from "react/jsx-runtime";
+import { ModeToggle } from "@/components/mode-toggle.tsx";
 
-const aboutItems: never[] = [
-    // {
-    //     label: "Projects Completed",
-    //     number: 2
-    // },
-    // {
-    //     label: "Years of Experience",
-    //     number: 1
-    // }
-]
+export default function Header() {
+    const location = useLocation(); // Get current path
 
-const About = () => {
+    const isActive = (path: string) => location.pathname === path;
+
+    const linkClass = (path: string) =>
+        `group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors
+        ${isActive(path) ? "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-50" : "hover:bg-gray-100 dark:hover:bg-gray-800"}
+        focus:bg-gray-100 focus:text-gray-900 dark:focus:bg-gray-800 dark:focus:text-gray-50`;
+
     return (
-        <section className={"py-6 md:pt-28"}>
-            <div className={"container"}>
-                <div className={"bg-slate-200/50 dark:bg-slate-800/50 p-7 items-center rounded-2xl md:p-12"}>
-                    <p className={"text-slate-800 dark:text-slate-300 mb-4 md:mb-8 md:text-xl"}>
-                        Welcome! I'm Amaan Lari, a passionate Full-Stack Developer with a knack for building scalable
-                        and high-performing applications.
-
-                        Combining innovation and technical expertise, I transform ideas into seamless digital
-                        experiences—whether it's crafting secure backend systems, designing intuitive front-end
-                        interfaces, or optimizing performance for maximum efficiency. With experience in Spring Boot,
-                        Node.js, React, and Angular, I bring a problem-solving mindset to every project.
-
-                        Let's build something exceptional together!
-                    </p>
-                    <div className={"flex flex-wrap items-center gap-4 md:gap-7"}>
-                        {
-                            aboutItems.map(
-                                ({label, number}, key) => (
-                                    <div key={key}>
-                                        <div className={"flex items-center md:mb-2"}>
-                                            <span className={"text-2xl font-semibold md:text-4xl"}>{number}</span>
-                                            <span className={"text-slate-400 font-semibold md:text-3xl"}>+</span>
-                                        </div>
-
-                                        <p className={"text-sm text-slate-400"}>{label}</p>
-                                    </div>
-                                ))
-                        }
-                        <div className={"ml-auto"}>
-                        <LogoIcon className={"align-text-bottom"}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+        <header className="flex h-20 w-full shrink-0 items-center container">
+            <Link to="/" className="mr-6 hidden lg:flex">
+                <LogoIcon />
+                <span className="sr-only">Amaan Lari</span>
+            </Link>
+            <nav className="mx-auto hidden lg:flex gap-6 border rounded-md">
+                <Link to="/" className={linkClass("/")}>Home</Link>
+                <Link to={"/about-me"} className={linkClass("/about-me")}>About Me</Link>
+                <Link to="/resume" className={linkClass("/resume")}>Resume</Link>
+                <Link to="/blog" className={linkClass("/blog")}>Blog</Link>
+                {/*<Link to="/contact" className={linkClass("/contact")}>Contact</Link>*/}
+            </nav>
+            <span className="hidden lg:flex ml-12"><ModeToggle /></span>
+        </header>
+    );
 }
-
 
 function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
     return (
@@ -74,5 +52,3 @@ function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
-
-export default About;

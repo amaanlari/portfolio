@@ -14,8 +14,8 @@ const timelineHeaderVariants = cva(
     {
         variants: {
             variant: {
-                default: "group-last:before:hidden",
-                ghost: "",
+                default: "group-last:before:hidden ",
+                ghost: "group-last:before:h-[calc(100%-3rem)]",
             }
         },
         defaultVariants: {
