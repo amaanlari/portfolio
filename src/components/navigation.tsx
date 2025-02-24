@@ -28,7 +28,7 @@ const Navigation = () => {
     focus:bg-gray-100 focus:text-gray-900 dark:focus:bg-gray-800 dark:focus:text-gray-50`;
 
     const mobileLinkClass = (path: string) =>
-        `flex flex-col flex-1 items-center justify-center gap-1 mx-2 text-sm transition-colors
+        `flex flex-col flex-1 items-center justify-center gap-1 me-2 text-sm transition-colors
     ${isActive(path)
             ? "text-gray-900 dark:text-gray-50"
             : "text-gray-500 dark:text-gray-400"}`;
@@ -64,7 +64,7 @@ const Navigation = () => {
             {/* Bottom Navigation for Mobile */}
 
             <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-slate-600 bg-background">
-                <div className="mx-auto px-4">
+                <div className="mx-auto px-0">
                     <div className="flex items-stretch justify-between py-2">
                         {navItems.map((item) => (
                             <Link
