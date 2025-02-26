@@ -10,6 +10,7 @@ import {Link} from "react-router-dom";
 function Blog() {
     return (
         <main className={"container flex mx-auto justify-center items-center h-[80dvh]"}>
+            <title>Blogs - Amaan Lari</title>
             <div className={"flex flex-col items-center justify-center"}>
             <h1 className={"text-4xl"}>No blogs yet</h1>
             <Link to="/" className={"font-semibold text text-primary hover:text-slate-500"}>Go back to home</Link>

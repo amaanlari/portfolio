@@ -9,6 +9,7 @@ function Home() {
 
     return (
         <div>
+            <title>Amaan Lari</title>
             <main className={"container max-sm:hidden"}>
                 <Hero/>
             </main>

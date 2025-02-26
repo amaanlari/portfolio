@@ -9,6 +9,7 @@ import Resume from "@/components/resume.tsx";
 function ResumePage() {
     return (
         <main className={"container"}>
+            <title>Resume - Amaan Lari</title>
             <Resume/>
         </main>
     )

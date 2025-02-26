@@ -9,6 +9,7 @@ import About from "@/components/about.tsx";
 function AboutMe() {
     return (
         <main>
+            <title>About - Amaan Lari</title>
             <About />
         </main>
     )
