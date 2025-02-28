@@ -4,7 +4,7 @@
  * @license Apache-2.0
  */
 import {Button} from "@/components/ui/button.tsx";
-import {DownloadIcon, LucideMail} from "lucide-react";
+import {File, LucideMail} from "lucide-react";
 import {Link} from "react-router-dom";
 
 const linkedinLogoDark = "/images/InBug-White.png";
@@ -37,15 +37,21 @@ const Hero = () => {
                         Scalable Modern Websites and Software for the Future</h2>
                     <div className={"flex flex-col gap-3"}>
                         <div className={"flex gap-3"}>
-                            <Button variant={"default"} className={"w-fit"}> Download CV <DownloadIcon/></Button>
-                            <Button variant={"outline"}
-                                    className={"w-fit border-2 border-slate-600"}> E-mail <LucideMail/></Button>
+                            <a href='/document/resume.pdf' target={'_blank'}>
+                                <Button variant={"default"} className={"w-fit"}> Resume PDF <File/></Button>
+                            </a>
+                            <a href={"https://mail.google.com/mail/?tf=cm&fs=1&to=amaanlari.official@gmail.com"}
+                               target={"_blank"} rel={"noreferrer noopener"}>
+                                <Button variant={"outline"}
+                                        className={"w-fit border-2 border-slate-600"}> E-mail <LucideMail/>
+                                </Button>
+                            </a>
                         </div>
                         <div className={"flex gap-3"}>
                             <Link to={"https://linkedin.com/in/amaanlari"} target={"_blank"}>
                                 <Button variant={"outline"}
                                         className={"dark:hover:bg-slate-800 dark:bg-slate-600 bg-slate-300 hover:"}>
-                                    About me <img src={linkedinLogoDark} alt={"Linkedin Logo Image Dark Mode"}
+                                    LinkedIn <img src={linkedinLogoDark} alt={"Linkedin Logo Image Dark Mode"}
                                                   className={"h-4 hidden dark:inline"}/>
                                     <img src={linkedinLogoLight} alt={"Linkedin Logo Image Light mode"}
                                          className={"h-4 dark:hidden"}/>
