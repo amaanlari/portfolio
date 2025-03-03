@@ -4,6 +4,7 @@
  * @license Apache-2.0
  */
 import About from "@/components/about.tsx";
+import Skill from "@/components/skill.tsx";
 
 
 function AboutMe() {
@@ -11,6 +12,7 @@ function AboutMe() {
         <main>
             <title>About - Amaan Lari</title>
             <About />
+            <Skill/>
         </main>
     )
 }

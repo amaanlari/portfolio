@@ -7,8 +7,8 @@ import {Button} from "@/components/ui/button.tsx";
 import {File, LucideMail} from "lucide-react";
 import {Link} from "react-router-dom";
 
-const linkedinLogoDark = "/images/InBug-White.png";
-const linkedinLogoLight = "/images/InBug-Black.png";
+const linkedinLogoDark = `${import.meta.env.BASE_URL}/images/InBug-White.png`;
+const linkedinLogoLight = `${import.meta.env.BASE_URL}/images/InBug-Black.png`;
 
 const Hero = () => {
     return (
@@ -18,7 +18,7 @@ const Hero = () => {
                     <div className={"flex items-center gap-3"}>
                         <figure className={"img-box w-9 h-9 rounded-lg"}>
                             <img
-                                src={"/images/avatar.png"}
+                                src={`${import.meta.env.BASE_URL}/images/avatar.png`}
                                 width={40}
                                 height={40}
                                 alt={"portrait"}
@@ -60,9 +60,9 @@ const Hero = () => {
                             <Link to={"https://github.com/amaanlari"} target={"_blank"}>
                                 <Button variant={"outline"}
                                         className={"dark:hover:bg-slate-800 dark:bg-slate-600 bg-slate-300 hover:"}>
-                                    Github <img src={"/images/github-mark.svg"} alt={"Github Logo"}
+                                    Github <img src={`${import.meta.env.BASE_URL}/images/github-mark.svg`} alt={"Github Logo"}
                                                 className={"dark:hidden h-5"}/>
-                                    <img src={"/images/github-mark-white.svg"} alt={"GitHub Logo - dark mode"}
+                                    <img src={`${import.meta.env.BASE_URL}/images/github-mark-white.svg`} alt={"GitHub Logo - dark mode"}
                                          className={"h-5 hidden dark:inline"}/>
                                 </Button>
                             </Link>
@@ -77,7 +77,7 @@ const Hero = () => {
                         }
                     >
                         <img
-                            src={"/images/hero-bitmoji.png"}
+                            src={`${import.meta.env.BASE_URL}/images/hero-bitmoji.png`}
                             width={656}
                             height={800}
                             alt={"hero"}

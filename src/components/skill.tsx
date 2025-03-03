@@ -7,67 +7,67 @@ import {Card, CardContent} from "@/components/ui/card.tsx";
 
 const skillItem = [
     {
-        imgSrc: '/images/java.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/java.svg`,
         label: 'Java',
         desc: 'Language'
     },
     {
-        imgSrc: '/images/python.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/python.svg`,
         label: 'Python',
         desc: 'Language'
     },
     {
-        imgSrc: '/images/javascript.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/javascript.svg`,
         label: 'JavaScript',
         desc: 'Language'
     },
     {
-        imgSrc: '/images/css3.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/css3.svg`,
         label: 'CSS',
         desc: 'Frontend'
     },
     {
-        imgSrc: '/images/nodejs.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/nodejs.svg`,
         label: 'NodeJS',
         desc: 'Web Server'
     },
     {
-        imgSrc: '/images/expressjs.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/expressjs.svg`,
         label: 'ExpressJS',
         desc: 'Node Framework'
     },
     {
-        imgSrc: '/images/mongodb.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/mongodb.svg`,
         label: 'MongoDB',
         desc: 'Database'
     },
     {
-        imgSrc: '/images/postgresql.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/postgresql.svg`,
         label: 'PostgreSQL',
         desc: 'Database'
     },
     {
-        imgSrc: '/images/spring.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/spring.svg`,
         label: 'Spring Boot',
         desc: 'Framework'
     },
     {
-        imgSrc: '/images/flask.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/flask.svg`,
         label: 'Flask',
         desc: 'Framework'
     },
     {
-        imgSrc: '/images/react.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/react.svg`,
         label: 'React',
         desc: 'Framework'
     },
     {
-        imgSrc: '/images/tailwindcss.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/tailwindcss.svg`,
         label: 'TailwindCSS',
         desc: 'User Interface'
     },
     {
-        imgSrc: '/images/figma.svg',
+        imgSrc: `${import.meta.env.BASE_URL}/images/figma.svg`,
         label: 'Figma',
         desc: 'Design tool'
     },
