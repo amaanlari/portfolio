@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "baseUrl": "./portfolio",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
