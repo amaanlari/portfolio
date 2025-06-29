@@ -6,7 +6,6 @@ import AboutMe from "@/pages/about-me.tsx";
 import ResumePage from "@/pages/resume-page.tsx";
 import Blog from "@/pages/blog.tsx";
 import Navigation from "@/components/navigation.tsx";
-import HappyBirthdayFatima from "@/components/hey-there.tsx";
 
 function App() {
 
@@ -20,7 +19,6 @@ function App() {
                     <Route path="/about-me" element={<AboutMe/>}/>
                     <Route path="/resume" element={<ResumePage/>}/>
                     <Route path="/blog" element={<Blog/>}/>
-                    <Route path="/hey-there" element={<HappyBirthdayFatima/>}/>
                     {/*<Route path={"/contact"} element={<div>Contact</div>}/>*/}
                 </Routes>
             </div>
