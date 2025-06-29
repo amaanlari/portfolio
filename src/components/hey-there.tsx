@@ -57,7 +57,7 @@ export default function HappyBirthdayFatima() {
             >
                 <motion.img
                     src="/fatima_photo.png"
-                    alt="Fatima"
+                    alt="Nishi"
                     className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-sky-300"
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -70,7 +70,7 @@ export default function HappyBirthdayFatima() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1, duration: 1 }}
                 >
-                    Happy Birthday Fatima!
+                    Happy Birthday Nishii!
                 </motion.h1>
 
                 <motion.p
