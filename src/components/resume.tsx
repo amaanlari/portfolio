@@ -29,7 +29,8 @@ const experiences: TimelineItemType[] = [
             "Utilizing Atlassian tools (Bitbucket, Jira, Confluence), along with Google Docs/Sheets for project management and documentation.",
             "Managing version control with Git and contributing to automated deployments using Jenkins CI/CD pipelines.",
             "Gaining hands-on experience in building scalable microservices architectures, ensuring safe releases to staging/production, and maintaining high-quality software standards."
-        ]
+        ],
+        time: 'Apr 2025 - Present',
     },
     {
         id: 2,
@@ -37,7 +38,7 @@ const experiences: TimelineItemType[] = [
         subTitle: 'Viral Fission',
         description: [
             "Designed architecture of the notification system using Redis and Kafka, to improve the performance by replacing inefficient cron-based monitoring.",
-            "Enhanced API error handling by integrating Global Exception Handler and custom exceptions, simplifying integration for mobile developers.",
+            "E'nhanced API error handling by integrating Global Exception Handler and custom exceptions, simplifying integration for mobile developers.",
             "Developed the corporate website backend with CMS features for content updates, improving admin usability.",
             "Revamped the code with coding best practices, including environment-specific configuration management with YAML/Properties files."
         ],
