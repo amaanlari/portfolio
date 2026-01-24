@@ -19,6 +19,20 @@ import {Link} from "react-router-dom";
 const experiences: TimelineItemType[] = [
     {
         id: 1,
+        title: "Software Engineer",
+        subTitle: "Solvei8",
+        description: [
+            "Contributing as a Java Backend Developer in a microservices-based MES (Manufacturing Execution System) for apparel and clothing industries.",
+            "Working with Java, Scala, and Play Framework to design, build, and maintain scalable backend services.",
+            "Developing and delivering features with full ownership, ensuring functionality, reliability, and backward compatibility.",
+            "Collaborating in an Agile Scrum environment, actively participating in sprint planning, reviews, and delivering multi-service features and bug fixes.",
+            "Utilizing Atlassian tools (Bitbucket, Jira, Confluence), along with Google Docs/Sheets for project management and documentation.",
+            "Managing version control with Git and contributing to automated deployments using Jenkins CI/CD pipelines.",
+            "Gaining hands-on experience in building scalable microservices architectures, ensuring safe releases to staging/production, and maintaining high-quality software standards."
+        ]
+    },
+    {
+        id: 2,
         title: 'Software Developer Intern',
         subTitle: 'Viral Fission',
         description: [
@@ -30,7 +44,7 @@ const experiences: TimelineItemType[] = [
         time: 'Jul 2024 – Dec 2024',
     },
     {
-        id: 2,
+        id: 3,
         title: 'Open Source Collaborator',
         subTitle: 'Oppia',
         description: [
